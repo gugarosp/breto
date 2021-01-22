@@ -1,9 +1,28 @@
+@font-face {
+  font-family: "robotobold";
+  src: url("fontes/roboto_bold-webfont.woff2") format("woff2"), url("fontes/roboto_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "robotolight";
+  src: url("fontes/roboto_light-webfont.woff2") format("woff2"), url("fontes/roboto_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "robotoregular";
+  src: url("fontes/roboto_regular-webfont.woff2") format("woff2"), url("fontes/roboto_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 html, body {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "robotoregular", Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 
 main {
@@ -31,12 +50,18 @@ section h1 {
 }
 
 input, textarea, select {
-  width: calc(100% - 50px);
+  width: calc(100% - 52px);
   padding: 15px 25px;
   background: transparent;
   border: 1px solid #282828;
   color: #fff;
   margin-bottom: 20px;
+  font-family: "robotobold", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 
 input[type=submit], select {
@@ -48,7 +73,10 @@ textarea {
 }
 
 select {
+  padding: 15px 21px;
   appearance: none;
+  background: url(css-img/seta-baixo.svg) no-repeat calc(100% - 20px);
+  background-size: 15px;
 }
 
 header {
@@ -104,6 +132,8 @@ header nav ul li a {
   color: #000;
   transition: background-color 0.5s, color 0.5s;
   text-transform: uppercase;
+  font-family: "robotolight", Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 header nav ul li a:hover {
   background-color: #000;
@@ -113,11 +143,19 @@ header nav ul li a span {
   display: table-cell;
   vertical-align: middle;
 }
+header #menu-mobile {
+  display: none;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  top: calc(50% - 37px);
+}
 
 #banner {
   display: table;
   width: calc(100% - 2*40px);
-  min-height: calc(100% - 150px - 40px);
+  min-height: calc(100% - 150px - 2*40px);
   margin-top: 150px;
   background: url(css-img/banner.jpg) no-repeat;
   background-size: cover;
@@ -126,18 +164,21 @@ header nav ul li a span {
   display: table-cell;
   width: 100%;
   color: #fff;
-  height: 100%;
   vertical-align: middle;
   text-align: center;
 }
 #banner .conteudo-container h1 {
-  font-size: 54px;
+  font-size: 100px;
   text-transform: uppercase;
   letter-spacing: 10px;
+  font-family: "robotolight", Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 #banner .conteudo-container h5 {
   font-size: 18px;
   text-transform: uppercase;
+  font-family: "robotoregular", Arial, Helvetica, sans-serif;
+  margin: 10px 15px 50px;
 }
 #banner .conteudo-container a {
   display: inline-block;
@@ -148,11 +189,34 @@ header nav ul li a span {
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.5s, color 0.5s, padding 0.5s;
+  font-family: "robotobold", Arial, Helvetica, sans-serif;
 }
 #banner .conteudo-container a:hover {
   background-color: #000;
   color: #fff;
   padding: 25px 50px;
+}
+#banner #banner-carrossel {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 40px;
+}
+#banner #banner-carrossel span {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 100px;
+  opacity: 0.5;
+  height: 15px;
+  width: 15px;
+  text-indent: -99999px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+#banner #banner-carrossel span.banner-carrossel-ativo {
+  opacity: 1;
 }
 
 #collection {
@@ -160,6 +224,7 @@ header nav ul li a span {
 }
 #collection h1 {
   text-align: center;
+  margin-bottom: 100px;
 }
 #collection .conteudo-container {
   flex-wrap: wrap;
@@ -168,18 +233,18 @@ header nav ul li a span {
   width: 33.3333333333%;
   margin-bottom: 30px;
 }
-#collection .conteudo-container .collection-item div {
+#collection .conteudo-container .collection-item > div {
   width: 252px;
   margin: auto;
   text-align: center;
 }
-#collection .conteudo-container .collection-item div a:first-child {
+#collection .conteudo-container .collection-item > div a:first-child {
   transition: filter 0.5s;
 }
-#collection .conteudo-container .collection-item div a:first-child:hover {
+#collection .conteudo-container .collection-item > div a:first-child:hover {
   filter: brightness(150%);
 }
-#collection .conteudo-container .collection-item div a:nth-child(2) {
+#collection .conteudo-container .collection-item > div a:nth-child(3) {
   background-color: #fff;
   color: #000;
   text-decoration: none;
@@ -188,13 +253,55 @@ header nav ul li a span {
   padding: 5px 10px;
   border-radius: 100px;
   transition: background-color 0.5s, color 0.5s;
+  font-family: "robotolight", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
 }
-#collection .conteudo-container .collection-item div a:nth-child(2):hover {
+#collection .conteudo-container .collection-item > div a:nth-child(3):hover {
   background-color: #000;
   color: #fff;
 }
-#collection .conteudo-container .collection-item div span {
+#collection .conteudo-container .collection-item > div .versoes-item {
+  text-align: center;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div {
+  display: inline-block;
+  border-radius: 100px;
+  width: 18px;
+  height: 18px;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div:hover {
+  cursor: pointer;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-1.versao-item-ativo {
+  border: 1px solid #000000;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-1 span {
+  background-color: #000000;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-2.versao-item-ativo {
+  border: 1px solid #a36445;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-2 span {
+  background-color: #a36445;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-3.versao-item-ativo {
+  border: 1px solid #7a615d;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div.versao-item-3 span {
+  background-color: #7a615d;
+}
+#collection .conteudo-container .collection-item > div .versoes-item div span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  border: 3px solid #fff;
+}
+#collection .conteudo-container .collection-item > div span {
   display: block;
+  font-family: "robotolight", Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
 
 #fale-conosco {
@@ -210,11 +317,20 @@ header nav ul li a span {
   max-height: 180px;
 }
 #fale-conosco input[type=submit] {
-  width: 83px;
+  width: 80px;
+  padding: 20px 25px;
   float: right;
   cursor: pointer;
+  background: url(css-img/seta-direita.svg) no-repeat;
+  background-position: center;
+  background-size: 30px;
   background-color: #fff;
   color: #000;
+  transition: background-color 0.5s, background-position 0.5s;
+}
+#fale-conosco input[type=submit]:hover {
+  background-color: #646464;
+  background-position: 80%;
 }
 
 footer {
@@ -254,11 +370,13 @@ footer #footer-newsletter #footer-newsletter-form {
   display: flex;
   margin-top: 10px;
   margin-bottom: 70px;
-  border-radius: 20px;
+  border-radius: 30px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
   overflow: hidden;
 }
 footer #footer-newsletter #footer-newsletter-form div {
-  width: 70%;
+  width: 80%;
 }
 footer #footer-newsletter #footer-newsletter-form div input {
   padding: 25px 25px;
@@ -269,6 +387,13 @@ footer #footer-newsletter #footer-newsletter-form div input[type=text] {
   background-color: #646464;
   border: 0;
 }
+footer #footer-newsletter #footer-newsletter-form div input[type=text]::placeholder {
+  font-size: 13px;
+  color: #e9e9e9;
+  font-family: "robotoregular", Arial, Helvetica, sans-serif;
+  opacity: 1;
+  letter-spacing: 1px;
+}
 footer #footer-newsletter #footer-newsletter-form div input[type=submit] {
   background-color: #e9e9e9;
   color: #000;
@@ -277,10 +402,11 @@ footer #footer-newsletter #footer-newsletter-form div input[type=submit] {
   transition: background-color 0.5s;
 }
 footer #footer-newsletter #footer-newsletter-form div input[type=submit]:hover {
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 footer #footer-newsletter #footer-newsletter-form div + div {
-  width: 30%;
+  width: 20%;
 }
 footer #footer-cnpj {
   font-size: 11px;
@@ -313,6 +439,86 @@ footer #footer-redes-sociais #footer-twitter {
 }
 footer #footer-redes-sociais #footer-instagram {
   background-image: url(css-icones/instagram.svg);
+}
+
+@media screen and (max-width: 880px) {
+  input, textarea, select {
+    text-align: center;
+  }
+  input::placeholder, textarea::placeholder, select::placeholder {
+    text-align: center;
+  }
+
+  header {
+    display: flex;
+  }
+  header #logo {
+    width: 50%;
+    margin: 0;
+    height: 74px;
+  }
+  header #logo a {
+    margin: 0;
+  }
+  header nav {
+    display: none;
+  }
+  header #menu-mobile {
+    height: 74px;
+    display: block;
+    text-align: right;
+  }
+  header #menu-mobile span {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background: url(css-img/menu-mobile.svg) no-repeat;
+    background-size: contain;
+    margin-top: 22px;
+    cursor: pointer;
+  }
+
+  #collection .conteudo-container .collection-item {
+    width: 100%;
+  }
+
+  .conteudo-container {
+    display: block;
+  }
+  .conteudo-container .coluna-1, .conteudo-container .coluna-2 {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #fale-conosco .conteudo-container {
+    display: table;
+  }
+
+  footer input, footer textarea, footer select {
+    text-align: left;
+  }
+  footer input::placeholder, footer textarea::placeholder, footer select::placeholder {
+    text-align: left;
+  }
+  footer input[type=submit], footer textarea[type=submit], footer select[type=submit] {
+    text-align: center;
+  }
+  footer #footer-links ul {
+    width: 50%;
+  }
+  footer #footer-newsletter {
+    margin-top: 30px;
+  }
+  footer #footer-newsletter #footer-newsletter-form {
+    margin-bottom: 0;
+  }
+  footer #footer-cnpj {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  footer #footer-redes-sociais {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */

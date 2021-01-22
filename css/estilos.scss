@@ -1,3 +1,6 @@
+// [FONTES]
+@import 'fontes/_fontes';
+
 // [VARIÁVEIS]
 // Cores
 $cor-primaria: #000;
@@ -5,6 +8,11 @@ $cor-secundaria: #282828;
 $cor-terciaria: #e9e9e9;
 $cor-quarternaria: #fff;
 $cor-quinaria: #646464;
+
+// Cores Itens
+$cor-item-1:#000000;
+$cor-item-2: #a36445;
+$cor-item-3: #7a615d;
 
 // Alturas
 $altura-menu: 150px;
@@ -22,7 +30,8 @@ html, body {
     width: 100%;
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
 }
 
 main {
@@ -48,18 +57,26 @@ section {
     }
 
     .coluna-2 {
-        width: 40%
+        width: 40%;
     }
 }
 
 // Formulários
 input, textarea, select {
-    width: calc(100% - 50px);
+    width: calc(100% - 52px);
     padding: 15px 25px;
     background: transparent;
     border: 1px solid $cor-secundaria;
     color: $cor-quarternaria;
     margin-bottom: 20px;
+    font-family: 'robotobold', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    &::placeholder {
+        color: $cor-quarternaria;
+        opacity: 1;
+    }
+    
 }
 
 input[type="submit"],  select {
@@ -71,7 +88,10 @@ textarea {
 }
 
 select {
+    padding: 15px 21px;
     appearance: none;
+    background: url(css-img/seta-baixo.svg) no-repeat calc(100% - 20px);
+    background-size: 15px;
 }
 
 // Header
@@ -133,6 +153,8 @@ header {
                     color: $cor-primaria;
                     transition: background-color $tempo-transicao, color  $tempo-transicao;
                     text-transform: uppercase;
+                    font-family: 'robotolight', Arial, Helvetica, sans-serif;
+                    font-size: 14px;
 
                     &:hover {
                         background-color: $cor-primaria;
@@ -152,13 +174,22 @@ header {
 
     }
 
+    #menu-mobile {
+        display: none;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        top: calc(50% - 37px);
+    }
+
 }
 
 // Banner
 #banner {
     display: table;
     width: calc(100% - 2*#{$margem-global});
-    min-height: calc(100% - #{$altura-menu} - #{$margem-global});
+    min-height: calc(100% - #{$altura-menu} - 2*#{$margem-global});
     margin-top: $altura-menu;
     background: url(css-img/banner.jpg) no-repeat;
     background-size: cover;
@@ -167,19 +198,22 @@ header {
         display: table-cell;
         width: 100%;
         color: $cor-quarternaria;
-        height: 100%;
         vertical-align: middle;
         text-align: center;
 
         h1 {
-            font-size: 54px;
+            font-size: 100px;
             text-transform: uppercase;
             letter-spacing: 10px;
+            font-family: 'robotolight', Arial, Helvetica, sans-serif;
+            margin: 0;
         }
 
         h5 {
             font-size: 18px;
             text-transform: uppercase;
+            font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+            margin: 10px 15px 50px;
         }
 
         a {
@@ -191,11 +225,39 @@ header {
             text-transform: uppercase;
             text-decoration: none;
             transition: background-color $tempo-transicao, color $tempo-transicao, padding $tempo-transicao;
+            font-family: 'robotobold', Arial, Helvetica, sans-serif;
 
             &:hover {
                 background-color: $cor-primaria;
                 color: $cor-quarternaria;
                 padding: 25px 50px;
+            }
+
+        }
+
+    }
+
+    #banner-carrossel {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding-bottom: 40px;
+
+        span {
+            display: inline-block;
+            background-color: $cor-quarternaria;
+            border-radius: 100px;
+            opacity: 0.5;
+            height: 15px;
+            width: 15px;
+            text-indent: -99999px;
+            margin: 0 2px;
+            cursor: pointer;
+
+            &.banner-carrossel-ativo {
+                opacity: 1;
             }
 
         }
@@ -210,6 +272,7 @@ header {
 
     h1 {
         text-align: center;
+        margin-bottom: 100px;
     }
 
     .conteudo-container {
@@ -220,7 +283,7 @@ header {
             width: 33.3333333333%;
             margin-bottom: 30px;
 
-            div {
+            &> div {
                 width: 252px;
                 margin: auto;
                 text-align: center;
@@ -235,7 +298,7 @@ header {
 
                     }
 
-                    &:nth-child(2) {
+                    &:nth-child(3) {
                         background-color: $cor-quarternaria;
                         color: $cor-primaria;
                         text-decoration: none;
@@ -244,6 +307,9 @@ header {
                         padding: 5px 10px;
                         border-radius: 100px;
                         transition: background-color $tempo-transicao, color $tempo-transicao;
+                        font-family: 'robotolight', Arial, Helvetica, sans-serif;
+                        font-weight: bold;
+                        font-size: 18px;
 
                         &:hover {
                             background-color: $cor-primaria;
@@ -254,8 +320,68 @@ header {
 
                 }
 
+                .versoes-item {
+                    text-align: center;
+
+                    div {
+                        display: inline-block;
+                        border-radius: 100px;
+                        width: 18px;
+                        height: 18px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &.versao-item-1 {
+                            &.versao-item-ativo {
+                                border: 1px solid $cor-item-1;
+                            }
+
+                            span {
+                                background-color: $cor-item-1;
+                            }
+
+                        }
+
+                        &.versao-item-2 {
+                            &.versao-item-ativo {
+                                border: 1px solid $cor-item-2;
+                            }
+
+                            span {
+                                background-color: $cor-item-2;
+                            }
+
+                        }
+
+                        &.versao-item-3 {
+                            &.versao-item-ativo {
+                                border: 1px solid $cor-item-3;
+                            }
+
+                            span {
+                                background-color: $cor-item-3;
+                            }
+
+                        }
+
+                        span {
+                            display: inline-block;
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 100px;
+                            border: 3px solid $cor-quarternaria;
+                        }
+
+                    }
+
+                }
+
                 span {
                     display: block;
+                    font-family: 'robotolight', Arial, Helvetica, sans-serif;
+                    font-size: 13px;
                 }
 
             }
@@ -282,11 +408,21 @@ header {
     }
 
     input[type="submit"] {
-        width: 83px;
+        width: 80px;
+        padding: 20px 25px;
         float: right;
         cursor: pointer;
+        background: url(css-img/seta-direita.svg) no-repeat;
+        background-position: center;
+        background-size: 30px;
         background-color: $cor-quarternaria;
         color: $cor-primaria;
+        transition: background-color $tempo-transicao, background-position $tempo-transicao;
+
+        &:hover {
+            background-color: $cor-quinaria;
+            background-position: 80%;
+        }
     }
 
 }
@@ -341,11 +477,13 @@ footer {
             display: flex;
             margin-top: 10px;
             margin-bottom: 70px;
-            border-radius: 20px;
+            border-radius: 30px;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
             overflow: hidden;
 
             div {
-                width: 70%;
+                width: 80%;
 
                 input {
                     padding: 25px 25px;
@@ -355,6 +493,14 @@ footer {
                         width: calc(100% - 50px);
                         background-color: $cor-quinaria;
                         border: 0;
+
+                        &::placeholder {
+                            font-size: 13px;
+                            color: $cor-terciaria;
+                            font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+                            opacity: 1;
+                            letter-spacing: 1px;
+                        }
                     }
     
                     &[type="submit"] {
@@ -365,7 +511,8 @@ footer {
                         transition: background-color $tempo-transicao;
 
                         &:hover {
-                            background-color: $cor-quarternaria;
+                            background-color: $cor-primaria;
+                            color: $cor-quarternaria;
                         }
 
                     }
@@ -373,7 +520,7 @@ footer {
                 }
 
                 &+ div{
-                    width: 30%;
+                    width: 20%;
                 }
 
             }
@@ -425,3 +572,6 @@ footer {
     }
 
 }
+
+// [RESPONSIVIDADE]
+@import '_responsividade';
