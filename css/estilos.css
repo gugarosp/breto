@@ -1,0 +1,318 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  height: 100%;
+}
+
+section {
+  min-height: calc(100% - 2*40px);
+  padding: 40px;
+}
+section h1 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.conteudo-container {
+  display: flex;
+}
+.conteudo-container .coluna-1 {
+  width: calc(60% - 2*40px);
+  margin-right: 80px;
+}
+.conteudo-container .coluna-2 {
+  width: 40%;
+}
+
+input, textarea, select {
+  width: calc(100% - 50px);
+  padding: 15px 25px;
+  background: transparent;
+  border: 1px solid #282828;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+input[type=submit], select {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  appearance: none;
+}
+
+header {
+  height: 150px;
+  width: calc(100% - 2*40px);
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #e9e9e9;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+header #logo {
+  margin: auto;
+  width: 28%;
+  height: 0;
+  position: relative;
+  z-index: 1;
+  top: calc(50% - 37px);
+}
+header #logo a {
+  display: block;
+  margin: auto;
+  width: 114px;
+  height: 74px;
+  background: url(css-img/logo.png) no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+header nav {
+  height: 100%;
+}
+header nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+header nav ul li {
+  height: 100%;
+  width: 12%;
+  list-style-type: none;
+}
+header nav ul li.menu-item-vazio {
+  width: 28%;
+}
+header nav ul li a {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.5s, color 0.5s;
+  text-transform: uppercase;
+}
+header nav ul li a:hover {
+  background-color: #000;
+  color: #fff;
+}
+header nav ul li a span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#banner {
+  display: table;
+  width: calc(100% - 2*40px);
+  min-height: calc(100% - 150px - 40px);
+  margin-top: 150px;
+  background: url(css-img/banner.jpg) no-repeat;
+  background-size: cover;
+}
+#banner .conteudo-container {
+  display: table-cell;
+  width: 100%;
+  color: #fff;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+#banner .conteudo-container h1 {
+  font-size: 54px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+#banner .conteudo-container h5 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+#banner .conteudo-container a {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 15px 40px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.5s, color 0.5s, padding 0.5s;
+}
+#banner .conteudo-container a:hover {
+  background-color: #000;
+  color: #fff;
+  padding: 25px 50px;
+}
+
+#collection {
+  background-color: #fff;
+}
+#collection h1 {
+  text-align: center;
+}
+#collection .conteudo-container {
+  flex-wrap: wrap;
+}
+#collection .conteudo-container .collection-item {
+  width: 33.3333333333%;
+  margin-bottom: 30px;
+}
+#collection .conteudo-container .collection-item div {
+  width: 252px;
+  margin: auto;
+  text-align: center;
+}
+#collection .conteudo-container .collection-item div a:first-child {
+  transition: filter 0.5s;
+}
+#collection .conteudo-container .collection-item div a:first-child:hover {
+  filter: brightness(150%);
+}
+#collection .conteudo-container .collection-item div a:nth-child(2) {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  margin: 3px 0;
+  padding: 5px 10px;
+  border-radius: 100px;
+  transition: background-color 0.5s, color 0.5s;
+}
+#collection .conteudo-container .collection-item div a:nth-child(2):hover {
+  background-color: #000;
+  color: #fff;
+}
+#collection .conteudo-container .collection-item div span {
+  display: block;
+}
+
+#fale-conosco {
+  background-color: #000;
+  color: #fff;
+}
+#fale-conosco h2 {
+  font-size: 50px;
+}
+#fale-conosco textarea {
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+}
+#fale-conosco input[type=submit] {
+  width: 83px;
+  float: right;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+footer {
+  background-color: #282828;
+  padding: 40px;
+  color: #fff;
+}
+footer h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+footer #footer-links {
+  display: flex;
+}
+footer #footer-links ul {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+}
+footer #footer-links ul li {
+  list-style-type: none;
+}
+footer #footer-links ul li a {
+  color: #646464;
+  font-size: 13px;
+  text-decoration: none;
+}
+footer #footer-links ul li a:hover {
+  text-decoration: underline;
+}
+footer #footer-newsletter span {
+  font-size: 12px;
+}
+footer #footer-newsletter #footer-newsletter-form {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 70px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+footer #footer-newsletter #footer-newsletter-form div {
+  width: 70%;
+}
+footer #footer-newsletter #footer-newsletter-form div input {
+  padding: 25px 25px;
+  margin-bottom: 0;
+}
+footer #footer-newsletter #footer-newsletter-form div input[type=text] {
+  width: calc(100% - 50px);
+  background-color: #646464;
+  border: 0;
+}
+footer #footer-newsletter #footer-newsletter-form div input[type=submit] {
+  background-color: #e9e9e9;
+  color: #000;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+footer #footer-newsletter #footer-newsletter-form div input[type=submit]:hover {
+  background-color: #fff;
+}
+footer #footer-newsletter #footer-newsletter-form div + div {
+  width: 30%;
+}
+footer #footer-cnpj {
+  font-size: 11px;
+  color: #646464;
+  display: table;
+  height: 60px;
+}
+footer #footer-cnpj div {
+  display: table-cell;
+  vertical-align: bottom;
+}
+footer #footer-redes-sociais h1 {
+  margin-bottom: 20px;
+}
+footer #footer-redes-sociais .footer-social {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-indent: -99999px;
+  overflow: hidden;
+  margin-right: 30px;
+}
+footer #footer-redes-sociais #footer-facebook {
+  background-image: url(css-icones/facebook.svg);
+}
+footer #footer-redes-sociais #footer-twitter {
+  background-image: url(css-icones/twitter.svg);
+}
+footer #footer-redes-sociais #footer-instagram {
+  background-image: url(css-icones/instagram.svg);
+}
+
+/*# sourceMappingURL=estilos.css.map */
