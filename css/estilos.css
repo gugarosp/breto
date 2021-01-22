@@ -473,15 +473,22 @@ footer #footer-redes-sociais #footer-instagram {
 }
 
 @media screen and (max-width: 880px) {
-  input, textarea, select {
+  input, textarea, select, option {
     text-align: center;
+    text-align-last: center;
   }
-  input::placeholder, textarea::placeholder, select::placeholder {
+  input::placeholder, textarea::placeholder, select::placeholder, option::placeholder {
     text-align: center;
+    text-align-last: center;
   }
 
   .form-alerta {
     text-align: center;
+  }
+
+  .form-alerta, .form-resultado {
+    height: auto;
+    min-height: 20px;
   }
 
   header {
@@ -569,6 +576,11 @@ footer #footer-redes-sociais #footer-instagram {
   }
   footer #footer-redes-sociais {
     text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  #banner .conteudo-container h1 {
+    font-size: 50px;
   }
 }
 

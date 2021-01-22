@@ -1,15 +1,22 @@
 @media screen and (max-width: 880px) {
-    input, textarea, select {
+    input, textarea, select, option {
         text-align: center;
+        text-align-last: center;
         
         &::placeholder {
             text-align: center;
+            text-align-last: center;
         }
 
     }
 
     .form-alerta {
         text-align: center;
+    }
+
+    .form-alerta, .form-resultado {
+        height: auto;
+        min-height: 20px;
     }
 
     header {
@@ -136,6 +143,19 @@
 
         #footer-redes-sociais {
             text-align: center;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #banner {
+        .conteudo-container {
+            h1 {
+                font-size: 50px;
+            }
+
         }
 
     }
