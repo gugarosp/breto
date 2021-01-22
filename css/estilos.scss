@@ -68,7 +68,6 @@ input, textarea, select {
     background: transparent;
     border: 1px solid $cor-secundaria;
     color: $cor-quarternaria;
-    margin-bottom: 20px;
     font-family: 'robotobold', Arial, Helvetica, sans-serif;
     font-size: 16px;
 
@@ -92,6 +91,38 @@ select {
     appearance: none;
     background: url(css-img/seta-baixo.svg) no-repeat calc(100% - 20px);
     background-size: 15px;
+}
+
+.form-campo-alerta {
+    border: 1px solid red;
+}
+
+.form-alerta {
+    height: 20px;
+    color: red;
+
+    span {
+        display: none;
+        font-size: 12px;
+
+        &.form-alerta-ativo-texto {
+            display: block !important;
+        }
+
+    }
+
+}
+
+.form-resultado {
+    text-align: right;
+    height: 20px;
+    
+    span {
+        display: none;
+        color: yellow;
+        font-size: 12px;
+    }
+
 }
 
 // Header
@@ -401,29 +432,37 @@ header {
         font-size: 50px;
     }
 
-    textarea {
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
-    }
+    form {
+        display: table;
+        width: 100%;
 
-    input[type="submit"] {
-        width: 80px;
-        padding: 20px 25px;
-        float: right;
-        cursor: pointer;
-        background: url(css-img/seta-direita.svg) no-repeat;
-        background-position: center;
-        background-size: 30px;
-        background-color: $cor-quarternaria;
-        color: $cor-primaria;
-        transition: background-color $tempo-transicao, background-position $tempo-transicao;
-
-        &:hover {
-            background-color: $cor-quinaria;
-            background-position: 80%;
+        textarea {
+            height: 180px;
+            min-height: 180px;
+            max-height: 180px;
         }
+    
+        input[type="submit"] {
+            width: 80px;
+            padding: 20px 25px;
+            float: right;
+            cursor: pointer;
+            background: url(css-img/seta-direita.svg) no-repeat;
+            background-position: center;
+            background-size: 30px;
+            background-color: $cor-quarternaria;
+            color: $cor-primaria;
+            transition: background-color $tempo-transicao, background-position $tempo-transicao;
+    
+            &:hover {
+                background-color: $cor-quinaria;
+                background-position: 80%;
+            }
+
+        }
+
     }
+
 
 }
 
@@ -476,7 +515,6 @@ footer {
         #footer-newsletter-form {
             display: flex;
             margin-top: 10px;
-            margin-bottom: 70px;
             border-radius: 30px;
             border-top-right-radius: 100px;
             border-bottom-right-radius: 100px;
@@ -525,6 +563,10 @@ footer {
 
             }
 
+        }
+
+        .form-alerta {
+            margin-bottom: 70px;
         }
 
     }

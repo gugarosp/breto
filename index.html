@@ -5,18 +5,34 @@
 
 <title>Breto</title>
 
+<!-- Meta -->
+<meta name="author" content="Neverland">
+<meta name="description" content="Breto vestuário">
+<meta name="keywords" content="breto, roupa, sapato, calça, blusa">
+<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+<!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/estilos.css" media="all">
+
+<!-- Javascript -->
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </head>
 <body>
 
 <main>
 
+    <!-- Cabeçalho -->
     <header>
+
+        <!-- Logo -->
         <div id="logo">
             <a href="#">Breto</a>
         </div>
 
+        <!-- Menu -->
         <nav>
            <ul>
                <li><a href="#"><span>Masculino</span></a></li>
@@ -29,11 +45,13 @@
            </ul>
         </nav>
 
+        <!-- Menu Mobile -->
         <div id="menu-mobile">
             <span></span>
         </div>
     </header>
 
+    <!-- Banner -->
     <section id="banner">
         <div class="conteudo-container">
             <h1>Sapato</h1>
@@ -50,6 +68,7 @@
         </div>
     </section>
 
+    <!-- Collection -->
     <section id="collection">
         <h1>Collection</h1>
         <div class="conteudo-container">
@@ -140,33 +159,44 @@
         </div>
     </section>
 
+    <!-- Fale Conosco -->
     <section id="fale-conosco">
+        
         <div class="conteudo-container">
             <div class="coluna-1">
+                <!-- Fale Conosco - Texto -->
                 <h1>Fale Conosco</h1>
                 <h2>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </h2>
             </div>
             <div class="coluna-2">
-                <form>
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="E-mail">
-                    <input type="text" placeholder="Telefone">
-                    <select>
+                <!-- Fale Conosco - Formulário -->
+                <form onsubmit="enviaMensagem();">
+                    <input id="form-nome" type="text" placeholder="Nome">
+                    <div class="form-alerta"><span>Nome não preenchido</span></div>
+                    <input id="form-email" type="text" placeholder="E-mail">
+                    <div class="form-alerta"><span>Este campo deve conter um e-mail válido</span></div>
+                    <input id="form-telefone" type="text" placeholder="Telefone">
+                    <div class="form-alerta"><span>Este campo deve conter um telefone válido (apenas números)</span></div>
+                    <select id="form-departamento">
                         <option disabled selected>Departamento</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option>Roupas</option>
+                        <option>Sapatos</option>
                     </select>
-                    <textarea placeholder="Mensagem"></textarea>
-                    <input type="submit" value="" placeholder="Mensagem">
+                    <div class="form-alerta"><span>Departamento não selecionado</span></div>
+                    <textarea id="form-mensagem" placeholder="Mensagem"></textarea>
+                    <div class="form-alerta"><span>Mensagem não preenchida</span></div>
+                    <input id="form-enviar" type="submit" value="" placeholder="Enviar">
                 </form>
+                <div class="form-resultado"><span>Enviando...</span></div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="conteudo-container">
+            <!-- Footer - Links -->
             <div id="footer-links" class="coluna-1">
                 <ul>
                     <li><a href="#">Marca</a></li>
@@ -180,24 +210,29 @@
                     <li><a href="#">Privacidades</a></li>
                 </ul>
             </div>
+            <!-- Footer - Newsletter -->
             <div id="footer-newsletter" class="coluna-2">
                 <h1>Newsletter</h1>
                 <span>
                     Receba Ofertas e Novidades preparadas<br>
                     especialmente para você
                 </span>
-                <form>
+                <form onsubmit="enviaNewsletter();">
                     <div id="footer-newsletter-form">
-                        <div><input type="text" placeholder="Adicione seu e-mail"></div>
+                        <div><input id="form-newsletter" type="text" placeholder="Adicione seu e-mail"></div>
                         <div><input type="submit" value="OK"></div>
                     </div>
                 </form>
+                <div class="form-alerta"><span>Este campo deve conter um e-mail válido</span></div>
+                
             </div>
         </div>
         <div class="conteudo-container">
+            <!-- Footer - CNPJ -->
             <div id="footer-cnpj" class="coluna-1">
                 <div>2021 - CNPJ: 15.265.365/0001-95 - Breto Calçados - ME</div>
             </div>
+            <!-- Footer - Redes Sociais -->
             <div id="footer-redes-sociais" class="coluna-2">
                 <h1>Redes Sociais</h1>
                 <div>
