@@ -79,9 +79,55 @@
     }
 
     #collection {
+        #collection-navegacao {
+            display: block;
+            position: absolute;
+            width: 100%;
+            left: 0;
+
+            span {
+                cursor: pointer;
+            }
+
+            #collection-navegacao-esquerda, #collection-navegacao-direita {
+                position: absolute;
+                width: 30px;
+                height: 60px;
+                display: block;
+                top: 100px;
+                z-index: 1;
+                background: $cor-quarternaria url(css-img/seta-direita.svg) no-repeat center;
+                background-size: contain;
+            }
+
+            #collection-navegacao-esquerda {
+                left: 0;
+                transform: rotate(180deg);
+            }
+            
+            #collection-navegacao-direita {
+                right: 0;
+            }
+
+        }
+
         .conteudo-container {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+            height: 500px;
+
             .collection-item {
                 width: 100%;
+                position: absolute;
+                left: 0;
+            }
+
+            @for $i from 2 through 6 {
+                .collection-item:nth-child(n + #{$i}) {
+                  left: ($i - 1) * 100%;
+                }
             }
 
         }

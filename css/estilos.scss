@@ -134,7 +134,7 @@ header {
     background-color: $cor-terciaria;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 50;
 
     // Logo
     #logo {
@@ -222,7 +222,7 @@ header {
     width: calc(100% - 2*#{$margem-global});
     min-height: calc(100% - #{$altura-menu} - 2*#{$margem-global});
     margin-top: $altura-menu;
-    background: url(css-img/banner.jpg) no-repeat;
+    background: url(css-img/banner.jpg) no-repeat center;
     background-size: cover;
 
     .conteudo-container {
@@ -304,6 +304,10 @@ header {
     h1 {
         text-align: center;
         margin-bottom: 100px;
+    }
+
+    #collection-navegacao {
+        display: none;
     }
 
     .conteudo-container {

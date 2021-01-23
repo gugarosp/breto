@@ -1,11 +1,31 @@
-// Menu Mobile
 $(document).ready(function() {
+	// Menu Mobile
     $("#menu-mobile span").click(function(){
 		$("header nav").slideToggle("slow");
 	});
+
+	$itemCollection = 1
+	// Slide Collection
+	$("#collection-navegacao-direita").click(function() {
+		if ($itemCollection < 6) {
+			$( ".collection-item" ).animate({
+				left: "-=100%",
+			  }, 500);
+
+			$itemCollection++;
+		}
+	});
+	$("#collection-navegacao-esquerda").click(function() {
+		if ($itemCollection > 1) {
+			$( ".collection-item" ).animate({
+				left: "+=100%",
+			  }, 500);
+
+			$itemCollection--;
+		}
+	});
+
 });
-
-
 
 // Função para enviar Mensagem
 function enviaMensagem() {
@@ -50,7 +70,8 @@ function enviaMensagem() {
 	}
 
 	// Verifica se o email está no formato correto
-	if ((pegaEmail.indexOf('@') > -1) && (pegaEmail.indexOf('.') > -1) && (pegaEmail != "@.")) {
+	verificaEmail = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(pegaEmail));
+	if (verificaEmail) {
 		$("#form-email").next().children().hide();
 		$("#form-email").removeClass("form-campo-alerta");
 		$("#form-email").next().children().removeClass("form-alerta-ativo-texto");
