@@ -178,34 +178,42 @@ header #menu-mobile {
 }
 
 #banner {
-  display: table;
   width: calc(100% - 2*40px);
-  min-height: calc(100% - 150px - 2*40px);
-  margin-top: 150px;
+  height: calc(100% - 150px - 2*40px);
+  min-height: 400px;
   background: url(css-img/banner.jpg) no-repeat center;
-  background-size: cover;
+  margin-top: 150px;
 }
 #banner .conteudo-container {
-  display: table-cell;
+  display: block;
+  height: 100%;
+}
+#banner .conteudo-container #banner-texto {
+  display: table;
   width: 100%;
-  color: #fff;
+  height: 80%;
+  margin-bottom: 5%;
+}
+#banner .conteudo-container #banner-texto div {
+  display: table-cell;
   vertical-align: middle;
   text-align: center;
+  color: #fff;
 }
-#banner .conteudo-container h1 {
+#banner .conteudo-container #banner-texto div h1 {
   font-size: 100px;
   text-transform: uppercase;
   letter-spacing: 10px;
   font-family: "robotolight", Arial, Helvetica, sans-serif;
   margin: 0;
 }
-#banner .conteudo-container h5 {
+#banner .conteudo-container #banner-texto div h5 {
   font-size: 18px;
   text-transform: uppercase;
   font-family: "robotoregular", Arial, Helvetica, sans-serif;
   margin: 10px 15px 50px;
 }
-#banner .conteudo-container a {
+#banner .conteudo-container #banner-texto div a {
   display: inline-block;
   background: #fff;
   color: #000;
@@ -216,20 +224,18 @@ header #menu-mobile {
   transition: background-color 0.5s, color 0.5s, padding 0.5s;
   font-family: "robotobold", Arial, Helvetica, sans-serif;
 }
-#banner .conteudo-container a:hover {
+#banner .conteudo-container #banner-texto div a:hover {
   background-color: #000;
   color: #fff;
   padding: 25px 50px;
 }
-#banner #banner-carrossel {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+#banner .conteudo-container #banner-carrossel {
+  height: 10%;
+  text-align: center;
   text-align: center;
   padding-bottom: 40px;
 }
-#banner #banner-carrossel span {
+#banner .conteudo-container #banner-carrossel span {
   display: inline-block;
   background-color: #fff;
   border-radius: 100px;
@@ -240,12 +246,13 @@ header #menu-mobile {
   margin: 0 2px;
   cursor: pointer;
 }
-#banner #banner-carrossel span.banner-carrossel-ativo {
+#banner .conteudo-container #banner-carrossel span.banner-carrossel-ativo {
   opacity: 1;
 }
 
 #collection {
   background-color: #fff;
+  min-height: 500px;
 }
 #collection h1 {
   text-align: center;
@@ -539,6 +546,10 @@ footer #footer-redes-sociais #footer-instagram {
     cursor: pointer;
   }
 
+  section h1, footer h1 {
+    text-align: center;
+  }
+
   #collection #collection-navegacao {
     display: block;
     position: absolute;
@@ -554,7 +565,7 @@ footer #footer-redes-sociais #footer-instagram {
     height: 60px;
     display: block;
     top: 100px;
-    z-index: 1;
+    z-index: 10;
     background: #fff url(css-img/seta-direita.svg) no-repeat center;
     background-size: contain;
   }
@@ -570,7 +581,7 @@ footer #footer-redes-sociais #footer-instagram {
     position: absolute;
     left: 0;
     overflow: hidden;
-    height: 500px;
+    height: 405px;
   }
   #collection .conteudo-container .collection-item {
     width: 100%;
@@ -604,6 +615,12 @@ footer #footer-redes-sociais #footer-instagram {
   #fale-conosco .conteudo-container {
     display: table;
   }
+  #fale-conosco form .form-envolve-enviar {
+    text-align: center;
+  }
+  #fale-conosco form .form-envolve-enviar input {
+    float: none;
+  }
 
   footer input, footer textarea, footer select {
     text-align: left;
@@ -619,6 +636,7 @@ footer #footer-redes-sociais #footer-instagram {
   }
   footer #footer-newsletter {
     margin-top: 30px;
+    text-align: center;
   }
   footer #footer-newsletter #footer-newsletter-form {
     margin-bottom: 0;
@@ -632,7 +650,7 @@ footer #footer-redes-sociais #footer-instagram {
   }
 }
 @media screen and (max-width: 500px) {
-  #banner .conteudo-container h1 {
+  #banner .conteudo-container #banner-texto div h1 {
     font-size: 50px;
   }
 }

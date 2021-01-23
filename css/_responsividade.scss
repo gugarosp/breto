@@ -78,6 +78,13 @@
 
     }
 
+    section, footer {
+        h1 {
+            text-align: center;
+        }
+
+    }
+
     #collection {
         #collection-navegacao {
             display: block;
@@ -95,7 +102,7 @@
                 height: 60px;
                 display: block;
                 top: 100px;
-                z-index: 1;
+                z-index: 10;
                 background: $cor-quarternaria url(css-img/seta-direita.svg) no-repeat center;
                 background-size: contain;
             }
@@ -116,7 +123,7 @@
             position: absolute;
             left: 0;
             overflow: hidden;
-            height: 500px;
+            height: 405px;
 
             .collection-item {
                 width: 100%;
@@ -149,6 +156,18 @@
             display: table;
         }
 
+        form {
+            .form-envolve-enviar {
+                text-align: center;
+                
+                input {
+                    float: none;
+                }
+
+            }
+
+        }
+
     }
 
     footer {
@@ -175,6 +194,7 @@
         
         #footer-newsletter {
             margin-top: 30px;
+            text-align: center;
 
             #footer-newsletter-form {
                 margin-bottom: 0;
@@ -198,8 +218,14 @@
 @media screen and (max-width: 500px) {
     #banner {
         .conteudo-container {
-            h1 {
-                font-size: 50px;
+            #banner-texto {
+                div{
+                    h1 {
+                        font-size: 50px;
+                    }
+
+                }
+                
             }
 
         }

@@ -54,17 +54,21 @@
     <!-- Banner -->
     <section id="banner">
         <div class="conteudo-container">
-            <h1>Sapato</h1>
-            <h5>
-                Sapatos Masculinos para todos os estilos<br>
-                Elegância e Conforto nos seus pés
-            </h5>
-            <a href="#">Comprar</a>
-        </div>
-        <div id="banner-carrossel">
-            <span id="banner-carrossel-1" class="banner-carrossel-ativo">1</span>
-            <span id="banner-carrossel-1">2</span>
-            <span id="banner-carrossel-1">3</span>
+            <div id="banner-texto">
+                <div>
+                    <h1>Sapato</h1>
+                    <h5>
+                        Sapatos Masculinos para todos os estilos<br>
+                        Elegância e Conforto nos seus pés
+                    </h5>
+                    <a href="#">Comprar</a>
+                </div>
+            </div>
+            <div id="banner-carrossel">
+                <span id="banner-carrossel-1" class="banner-carrossel-ativo">1</span>
+                <span id="banner-carrossel-1">2</span>
+                <span id="banner-carrossel-1">3</span>
+            </div>
         </div>
     </section>
 
@@ -181,7 +185,7 @@
                     <div class="form-alerta"><span>Nome não preenchido</span></div>
                     <input id="form-email" type="text" placeholder="E-mail">
                     <div class="form-alerta"><span>Este campo deve conter um e-mail válido</span></div>
-                    <input id="form-telefone" type="text" placeholder="Telefone">
+                    <input id="form-telefone" type="text" maxlength="16" placeholder="Telefone">
                     <div class="form-alerta"><span>Este campo deve conter um telefone válido (apenas números)</span></div>
                     <select id="form-departamento">
                         <option disabled selected>Departamento</option>
@@ -191,7 +195,7 @@
                     <div class="form-alerta"><span>Departamento não selecionado</span></div>
                     <textarea id="form-mensagem" placeholder="Mensagem"></textarea>
                     <div class="form-alerta"><span>Mensagem não preenchida</span></div>
-                    <input id="form-enviar" type="submit" value="" placeholder="Enviar">
+                    <div class="form-envolve-enviar"><input id="form-enviar" type="submit" value="" placeholder="Enviar"></div>
                 </form>
                 <div class="form-resultado"><span>Enviando...</span></div>
             </div>

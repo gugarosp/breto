@@ -218,79 +218,89 @@ header {
 
 // Banner
 #banner {
-    display: table;
     width: calc(100% - 2*#{$margem-global});
-    min-height: calc(100% - #{$altura-menu} - 2*#{$margem-global});
-    margin-top: $altura-menu;
+    height: calc(100% - #{$altura-menu} - 2*#{$margem-global});
+    min-height: 400px;
     background: url(css-img/banner.jpg) no-repeat center;
-    background-size: cover;
+    margin-top: $altura-menu;
 
     .conteudo-container {
-        display: table-cell;
-        width: 100%;
-        color: $cor-quarternaria;
-        vertical-align: middle;
-        text-align: center;
+        display: block;
+        height: 100%;
 
-        h1 {
-            font-size: 100px;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            font-family: 'robotolight', Arial, Helvetica, sans-serif;
-            margin: 0;
-        }
+        #banner-texto {
+            display: table;
+            width: 100%;
+            height: 80%;
+            margin-bottom: 5%;
 
-        h5 {
-            font-size: 18px;
-            text-transform: uppercase;
-            font-family: 'robotoregular', Arial, Helvetica, sans-serif;
-            margin: 10px 15px 50px;
-        }
-
-        a {
-            display: inline-block;
-            background: $cor-quarternaria;
-            color: $cor-primaria;
-            padding: 15px 40px;
-            border-radius: 100px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background-color $tempo-transicao, color $tempo-transicao, padding $tempo-transicao;
-            font-family: 'robotobold', Arial, Helvetica, sans-serif;
-
-            &:hover {
-                background-color: $cor-primaria;
+            div {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
                 color: $cor-quarternaria;
-                padding: 25px 50px;
+
+                h1 {
+                    font-size: 100px;
+                    text-transform: uppercase;
+                    letter-spacing: 10px;
+                    font-family: 'robotolight', Arial, Helvetica, sans-serif;
+                    margin: 0;
+                }
+        
+                h5 {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+                    margin: 10px 15px 50px;
+                }
+        
+                a {
+                    display: inline-block;
+                    background: $cor-quarternaria;
+                    color: $cor-primaria;
+                    padding: 15px 40px;
+                    border-radius: 100px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    transition: background-color $tempo-transicao, color $tempo-transicao, padding $tempo-transicao;
+                    font-family: 'robotobold', Arial, Helvetica, sans-serif;
+        
+                    &:hover {
+                        background-color: $cor-primaria;
+                        color: $cor-quarternaria;
+                        padding: 25px 50px;
+                    }
+        
+                }
+
             }
 
         }
 
-    }
+        #banner-carrossel {
+            height: 10%;
+            text-align: center;
+            text-align: center;
+            padding-bottom: 40px;
 
-    #banner-carrossel {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        text-align: center;
-        padding-bottom: 40px;
+            span {
+                display: inline-block;
+                background-color: $cor-quarternaria;
+                border-radius: 100px;
+                opacity: 0.5;
+                height: 15px;
+                width: 15px;
+                text-indent: -99999px;
+                margin: 0 2px;
+                cursor: pointer;
 
-        span {
-            display: inline-block;
-            background-color: $cor-quarternaria;
-            border-radius: 100px;
-            opacity: 0.5;
-            height: 15px;
-            width: 15px;
-            text-indent: -99999px;
-            margin: 0 2px;
-            cursor: pointer;
+                &.banner-carrossel-ativo {
+                    opacity: 1;
+                }
 
-            &.banner-carrossel-ativo {
-                opacity: 1;
             }
-
+            
         }
 
     }
@@ -300,6 +310,7 @@ header {
 // Collection
 #collection {
     background-color: $cor-quarternaria;
+    min-height: 500px;
 
     h1 {
         text-align: center;
