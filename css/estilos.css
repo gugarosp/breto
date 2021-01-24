@@ -501,6 +501,10 @@ footer #footer-redes-sociais #footer-instagram {
     min-height: 20px;
   }
 
+  .form-resultado {
+    text-align: center;
+  }
+
   header {
     display: flex;
   }
